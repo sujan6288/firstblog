@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-labelledby="title desc">
+  <title id="title">Choosing Apache, Nginx, or both</title><desc id="desc">Guidance cards explain when to choose Apache, Nginx, or use both together.</desc>
+  <style>text{font-family:Segoe UI,Arial,sans-serif;fill:#14213d}.h{font-weight:700;font-size:20px}.s{font-size:15px}.w{fill:#fff}</style>
+  <rect width="600" height="400" rx="16" fill="#f4f7fb" stroke="#d5deea"/><text class="h" x="300" y="58" text-anchor="middle">Which setup fits your needs?</text>
+  <g><rect x="28" y="96" width="168" height="238" rx="14" fill="#fff" stroke="#d22128" stroke-width="3"/><rect x="216" y="96" width="168" height="238" rx="14" fill="#fff" stroke="#009639" stroke-width="3"/><rect x="404" y="96" width="168" height="238" rx="14" fill="#fff" stroke="#1f6feb" stroke-width="3"/></g>
+  <g text-anchor="middle"><text class="h" x="112" y="136">Apache</text><text class="s" x="112" y="174">Per-directory</text><text class="s" x="112" y="197">control and many</text><text class="s" x="112" y="220">modules</text><text class="h" x="300" y="136">Nginx</text><text class="s" x="300" y="174">Fast static serving</text><text class="s" x="300" y="197">and many concurrent</text><text class="s" x="300" y="220">connections</text><text class="h" x="488" y="136">Both</text><text class="s" x="488" y="174">Nginx in front,</text><text class="s" x="488" y="197">Apache behind for</text><text class="s" x="488" y="220">application work</text></g>
+  <g><circle cx="112" cy="278" r="20" fill="#d22128"/><circle cx="300" cy="278" r="20" fill="#009639"/><circle cx="488" cy="278" r="20" fill="#1f6feb"/></g>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-labelledby="title desc">
+  <title id="title">Apache and Nginx timeline</title><desc id="desc">Timeline from Apache in 1995 to Nginx in 2004 and both in use today.</desc>
+  <style>text{font-family:Segoe UI,Arial,sans-serif;fill:#14213d}.h{font-weight:700;font-size:22px}.s{font-size:16px}.w{fill:#fff}</style>
+  <rect width="600" height="400" rx="16" fill="#f4f7fb" stroke="#d5deea"/>
+  <text class="h" x="300" y="62" text-anchor="middle">Two generations of web servers</text>
+  <line x1="70" y1="208" x2="530" y2="208" stroke="#14213d" stroke-width="4" stroke-linecap="round"/>
+  <g stroke="#14213d" stroke-width="2"><line x1="110" y1="194" x2="110" y2="222"/><line x1="290" y1="194" x2="290" y2="222"/><line x1="490" y1="194" x2="490" y2="222"/></g>
+  <g class="s" text-anchor="middle"><text x="110" y="252">1995</text><text x="290" y="252">2004</text><text x="490" y="252">Today</text></g>
+  <circle cx="110" cy="208" r="14" fill="#d22128"/><circle cx="290" cy="208" r="14" fill="#009639"/><circle cx="490" cy="208" r="14" fill="#1f6feb"/>
+  <rect x="42" y="102" width="136" height="64" rx="11" fill="#d22128"/><text class="h w" x="110" y="130" text-anchor="middle">Apache</text><text class="s w" x="110" y="151" text-anchor="middle">first release</text>
+  <rect x="222" y="272" width="136" height="64" rx="11" fill="#009639"/><text class="h w" x="290" y="300" text-anchor="middle">Nginx</text><text class="s w" x="290" y="321" text-anchor="middle">first release</text>
+  <rect x="414" y="102" width="152" height="64" rx="11" fill="#1f6feb"/><text class="h w" x="490" y="130" text-anchor="middle">Both widely</text><text class="s w" x="490" y="151" text-anchor="middle">used today</text>
+</svg>

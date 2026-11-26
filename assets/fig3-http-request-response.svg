@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-labelledby="title desc">
+  <title id="title">HTTP request and response</title><desc id="desc">A browser sends an HTTP GET request and receives a 200 OK response from a web server.</desc>
+  <style>text{font-family:Segoe UI,Arial,sans-serif;fill:#14213d}.h{font-weight:700;font-size:18px}.m{font:15px monospace}.w{fill:#fff}</style>
+  <rect width="600" height="400" rx="16" fill="#f4f7fb" stroke="#d5deea"/>
+  <rect x="36" y="42" width="528" height="128" rx="12" fill="#fff" stroke="#1f6feb" stroke-width="2"/><path d="M36 82h528" stroke="#1f6feb" stroke-width="2"/>
+  <rect x="36" y="42" width="528" height="40" rx="12" fill="#1f6feb"/><text class="h w" x="58" y="68">Request — browser to server</text>
+  <text class="m" x="60" y="112">GET /index.html HTTP/1.1</text><text class="m" x="60" y="140">Host: example.com</text>
+  <path d="M300 184v32" stroke="#14213d" stroke-width="3"/><path d="M292 208l8 10 8-10" fill="none" stroke="#14213d" stroke-width="3"/>
+  <rect x="36" y="230" width="528" height="128" rx="12" fill="#fff" stroke="#009639" stroke-width="2"/><path d="M36 270h528" stroke="#009639" stroke-width="2"/>
+  <rect x="36" y="230" width="528" height="40" rx="12" fill="#009639"/><text class="h w" x="58" y="256">Response — server to browser</text>
+  <text class="m" x="60" y="300">HTTP/1.1 200 OK</text><text class="m" x="60" y="328">Content-Type: text/html  + page body</text>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-labelledby="title desc">
+  <title id="title">Apache architecture</title><desc id="desc">Apache parent process selects a multi-processing module, then runs child processes or threads and modules.</desc>
+  <style>text{font-family:Segoe UI,Arial,sans-serif;fill:#14213d}.h{font-weight:700;font-size:18px}.s{font-size:14px}.w{fill:#fff}</style>
+  <rect width="600" height="400" rx="16" fill="#f4f7fb" stroke="#d5deea"/>
+  <rect x="175" y="28" width="250" height="56" rx="11" fill="#d22128"/><text class="h w" x="300" y="62" text-anchor="middle">Apache parent process</text>
+  <path d="M300 84v35M120 119h360" stroke="#14213d" stroke-width="3"/><path d="M120 119v20M300 119v20M480 119v20" stroke="#14213d" stroke-width="3"/>
+  <g><rect x="35" y="142" width="170" height="100" rx="12" fill="#fff" stroke="#d22128" stroke-width="2"/><rect x="215" y="142" width="170" height="100" rx="12" fill="#fff" stroke="#d22128" stroke-width="2"/><rect x="395" y="142" width="170" height="100" rx="12" fill="#fff" stroke="#d22128" stroke-width="2"/></g>
+  <g text-anchor="middle"><text class="h" x="120" y="174">Prefork MPM</text><text class="s" x="120" y="200">single-threaded</text><text class="s" x="120" y="220">child processes</text><text class="h" x="300" y="174">Worker MPM</text><text class="s" x="300" y="200">multi-threaded</text><text class="s" x="300" y="220">child processes</text><text class="h" x="480" y="174">Event MPM</text><text class="s" x="480" y="200">listener thread for</text><text class="s" x="480" y="220">idle connections</text></g>
+  <rect x="78" y="292" width="444" height="56" rx="11" fill="#14213d"/><text class="h w" x="300" y="325" text-anchor="middle">Loadable modules: TLS · PHP · rewrite · logging</text>
+</svg>

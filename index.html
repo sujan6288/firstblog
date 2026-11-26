@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A visual guide to web servers, Apache, and Nginx by Sujan Shrestha.">
+  <meta name="theme-color" content="#08152b">
+  <title>Web Servers, Clearly Explained · Sujan Shrestha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="progress" aria-hidden="true"><i></i></div>
+  <header class="nav-wrap">
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="wordmark" href="#top"><span class="mark">&lt;/&gt;</span> sujan<span>.notes</span></a>
+      <div class="nav-links">
+        <a href="#basics">Basics</a><a href="#apache">Apache</a><a href="#nginx">Nginx</a><a href="#choose">Choose</a>
+      </div>
+      <button class="theme-toggle" aria-label="Toggle colour theme" title="Toggle colour theme">◐</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span></span> Web infrastructure · field guide 01</p>
+        <h1>The web has a<br><em>front door.</em></h1>
+        <p class="lede">Every page, image and API response passes through it. Meet the web server—and understand why Apache and Nginx take such different routes to the same destination.</p>
+        <div class="hero-actions"><a class="button primary" href="#basics">Start reading <b>↓</b></a><a class="button ghost" href="#compare">See the comparison</a></div>
+        <div class="hero-meta"><div><span>READING TIME</span><b>8 minutes</b></div><div><span>LEVEL</span><b>Beginner friendly</b></div><div><span>BY</span><b>Sujan Shrestha</b></div></div>
+      </div>
+      <div class="hero-art reveal"><img src="assets/banner.svg" alt="Illustrated server racks connected by a web of network nodes"></div>
+    </section>
+
+    <section class="signal shell reveal" aria-label="Article summary">
+      <p>IN THIS GUIDE</p><span>01</span><b>How a request travels</b><span>02</span><b>Two server architectures</b><span>03</span><b>How to make the call</b>
+    </section>
+
+    <section id="basics" class="section shell">
+      <div class="section-label reveal"><span>01</span><p>Start with the basics</p></div>
+      <div class="split-intro"><div class="reveal"><h2>What exactly is a <em>web server?</em></h2></div><div class="reveal"><p>A web server is both the always-online machine that holds a website and the software that listens for requests on it. Apache and Nginx are the software layer: they receive an HTTP request, decide where it should go, and return a response.</p><p>Think of it as a skilled receptionist for your application—fast with simple requests, careful with secure ones, and able to pass complicated work to the right team behind the scenes.</p></div></div>
+      <figure class="wide-figure reveal"><img src="assets/fig1-web-server-infrastructure.svg" alt="A client connects to a web server that serves files and connects to applications and databases"><figcaption><b>THE BIG PICTURE</b> The web server is the boundary between visitors and the resources that create a site.</figcaption></figure>
+      <div class="jobs-grid">
+        <article class="job reveal"><span>01</span><h3>Serve files</h3><p>Send HTML, CSS, JavaScript, images and downloads straight from disk.</p></article>
+        <article class="job reveal"><span>02</span><h3>Route requests</h3><p>Hand dynamic work to an application written in PHP, Python or Node.js.</p></article>
+        <article class="job reveal"><span>03</span><h3>Protect traffic</h3><p>Use TLS certificates to keep HTTPS traffic private and authentic.</p></article>
+        <article class="job reveal"><span>04</span><h3>Keep a record</h3><p>Write access and error logs that help operators understand the system.</p></article>
+      </div>
+    </section>
+
+    <section class="dark-section">
+      <div class="shell request-section">
+        <div class="section-label light reveal"><span>02</span><p>One visit, many steps</p></div>
+        <div class="request-heading reveal"><h2>A page load is a<br><em>small conversation.</em></h2><p>Your browser and a server exchange a short, structured set of messages—usually before you have time to notice.</p></div>
+        <div class="request-grid">
+          <figure class="dark-figure reveal"><img src="assets/fig2-client-server-communication.svg" alt="Five steps of browser and server communication from DNS lookup through HTTP response"><figcaption>FROM NAME TO PAGE</figcaption></figure>
+          <ol class="steps reveal"><li><b>DNS LOOKUP</b><span>Your browser turns a name like <code>example.com</code> into an IP address.</span></li><li><b>CONNECTION</b><span>It opens a connection, usually on port <code>443</code> for HTTPS.</span></li><li><b>SECURE HANDSHAKE</b><span>TLS agrees the encryption that protects the exchange.</span></li><li><b>HTTP REQUEST</b><span>The browser asks for a resource such as <code>/index.html</code>.</span></li><li><b>HTTP RESPONSE</b><span>The server answers with a status, headers and the requested content.</span></li></ol>
+        </div>
+        <aside class="note reveal"><span>✦</span><p><b>A useful mental model:</b> URLs tell the server what a visitor wants. The server decides whether that means “read this file” or “ask this application to create something.”</p></aside>
+      </div>
+    </section>
+
+    <section class="section shell protocol">
+      <div class="protocol-copy reveal"><div class="section-label"><span>03</span><p>The language of the web</p></div><h2>HTTP gives messages <em>shape.</em></h2><p>Requests include a method, path and headers. Responses include a status code, headers and usually a body. HTTPS is simply HTTP protected by TLS—adding encryption, integrity and server authentication.</p><div class="status-row"><span><i class="good"></i><b>2xx</b> success</span><span><i class="move"></i><b>3xx</b> redirect</span><span><i class="warn"></i><b>4xx</b> client error</span><span><i class="bad"></i><b>5xx</b> server error</span></div></div>
+      <figure class="request-card reveal"><img src="assets/fig3-http-request-response.svg" alt="Example HTTP GET request and 200 OK response"><figcaption><b>GET</b> asks for data · <b>200 OK</b> confirms success</figcaption></figure>
+    </section>
+
+    <section id="apache" class="server-section apache">
+      <div class="shell">
+        <div class="server-head reveal"><p class="kicker">04 / THE FLEXIBLE ONE</p><h2>Apache HTTP<br><em>Server</em></h2><p>Apache is a modular veteran of the web. Its feature-rich ecosystem and per-directory configuration make it a natural fit for adaptable environments and traditional hosting.</p></div>
+        <div class="server-layout"><figure class="reveal"><img src="assets/fig4-apache-architecture.svg" alt="Apache parent process selects an MPM and uses optional modules"><figcaption>THE APACHE MODEL</figcaption></figure><div class="server-notes reveal"><div><b>MODULAR BY DESIGN</b><p>Optional modules add HTTPS, URL rewriting, proxying and much more.</p></div><div><b>CHOOSE AN MPM</b><p>Its Multi-Processing Module selects how connections are handled: <code>prefork</code>, <code>worker</code> or <code>event</code>.</p></div><div><b>LOCAL CONTROL</b><p><code>.htaccess</code> enables directory-level rules without editing the central configuration.</p></div></div></div>
+        <div class="code-wrap reveal"><div class="code-title"><span></span> apache.conf</div><pre><code>&lt;VirtualHost *:80&gt;
+    ServerName example.com
+    DocumentRoot /var/www/example
+&lt;/VirtualHost&gt;</code></pre></div>
+      </div>
+    </section>
+
+    <section id="nginx" class="server-section nginx">
+      <div class="shell">
+        <div class="server-head reveal"><p class="kicker">05 / THE CONCURRENCY SPECIALIST</p><h2>Nginx<br><em>“engine-x”</em></h2><p>Nginx was designed around an event-driven model. A small number of worker processes can keep many connections moving without giving each one its own thread.</p></div>
+        <div class="server-layout reverse"><figure class="reveal"><img src="assets/fig5-nginx-event-driven.svg" alt="Nginx master process manages worker processes that each run an event loop"><figcaption>THE NGINX MODEL</figcaption></figure><div class="server-notes reveal"><div><b>EVENT-DRIVEN I/O</b><p>Workers react when connections are ready instead of waiting on each one.</p></div><div><b>PROXY AT HEART</b><p>Reverse proxying, load balancing and caching are core strengths, not afterthoughts.</p></div><div><b>CENTRAL CONFIGURATION</b><p>Rules live in central files and are applied with a graceful reload—there is no <code>.htaccess</code> equivalent.</p></div></div></div>
+        <div class="code-wrap reveal"><div class="code-title"><span></span> nginx.conf</div><pre><code>server {
+    listen 80;
+    server_name example.com;
+    root /var/www/example;
+}</code></pre></div>
+      </div>
+    </section>
+
+    <section id="compare" class="compare shell">
+      <div class="section-label reveal"><span>06</span><p>It depends on the work</p></div><div class="compare-head reveal"><h2>Same purpose.<br><em>Different instincts.</em></h2><p>Neither server wins every scenario. Architecture, workload and your team’s needs are more useful guides than a generic “faster” claim.</p></div>
+      <figure class="compare-visual reveal"><img src="assets/fig6-apache-vs-nginx.svg" alt="Comparison matrix for Apache and Nginx"><figcaption>A quick visual map before the details.</figcaption></figure>
+      <div class="comparison-table reveal" role="region" aria-label="Apache versus Nginx comparison" tabindex="0"><table><thead><tr><th>QUESTION</th><th><span class="apache-dot"></span> APACHE</th><th><span class="nginx-dot"></span> NGINX</th></tr></thead><tbody><tr><th>How does it work?</th><td>MPMs using processes and threads</td><td>Event-driven workers</td></tr><tr><th>How is it configured?</th><td>Central files + optional <code>.htaccess</code></td><td>Central configuration files</td></tr><tr><th>Dynamic content?</th><td>Can use in-process modules or PHP-FPM</td><td>Passes work to FastCGI or an upstream app</td></tr><tr><th>Especially useful for?</th><td>Flexible per-site rules, shared hosting</td><td>Static files, many open connections, proxying</td></tr></tbody></table></div>
+    </section>
+
+    <section class="proxy-band"><div class="shell proxy-layout"><div class="reveal"><p class="kicker">07 / A COMMON PATTERN</p><h2>One welcoming<br>front, many <em>workers.</em></h2><p>A reverse proxy is the public-facing layer that can terminate HTTPS, cache responses and distribute requests across application servers. Nginx excels here, and Apache can do it too.</p></div><figure class="reveal"><img src="assets/fig7-reverse-proxy-load-balancing.svg" alt="Reverse proxy sends client requests to three backend servers"><figcaption>REVERSE PROXY + LOAD BALANCING</figcaption></figure></div></section>
+
+    <section id="choose" class="choose shell"><div class="section-label reveal"><span>08</span><p>Your practical starting point</p></div><h2 class="reveal">Choose for the job<br>you have <em>today.</em></h2><div class="choice-grid"><article class="choice apache-choice reveal"><p>START WITH</p><h3>Apache</h3><ul><li>You need <code>.htaccess</code> compatibility</li><li>You rely on its module ecosystem</li><li>You manage traditional shared hosting</li></ul></article><article class="choice nginx-choice reveal"><p>START WITH</p><h3>Nginx</h3><ul><li>You serve lots of static content</li><li>You need a reverse proxy or cache</li><li>You expect many concurrent connections</li></ul></article><article class="choice both-choice reveal"><p>REMEMBER</p><h3>Both can work</h3><p>It is perfectly normal to place Nginx in front and let Apache serve an existing application behind it.</p></article></div></section>
+
+    <section class="closing"><div class="shell reveal"><p class="eyebrow"><span></span> That’s the signal</p><h2>A server is more than a<br>place where a website <em>lives.</em></h2><p>It is the system that makes the web responsive, secure and available. Once you understand the path of a request, Apache and Nginx stop being mysterious names—and become useful tools.</p><a class="button primary" href="#top">Back to the top <b>↑</b></a></div></section>
+  </main>
+  <footer><div class="shell"><a class="wordmark" href="#top"><span class="mark">&lt;/&gt;</span> sujan<span>.notes</span></a><p>Web Servers, Clearly Explained · A learning project by Sujan Shrestha</p><a href="https://github.com/sujan6288" target="_blank" rel="noreferrer">github.com/sujan6288 ↗</a></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>
